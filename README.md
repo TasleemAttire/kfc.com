@@ -1,1 +1,59 @@
-open it hurry u miss the chance
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Poll Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: greenyellow;
+            margin: 0;
+        }
+        .poll {
+            background: orange;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: deeppink;
+            color: white;
+        }
+        button:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="poll">
+        <h1>Kia Ap Mujhe KFC Khilai Gi?</h1>
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('yesBtn').addEventListener('click', function() {
+            document.getElementById('result').innerText = 'You said Yes! Thank u:)';
+        });
+
+        document.getElementById('noBtn').addEventListener('click', function() {
+            document.getElementById('result').innerText = 'You said Yes! (Surprise!)Thank u:)';
+            this.innerText = 'Yes'; // No button ko Yes mein badal deta hai
+            this.removeEventListener('click', arguments.callee); // Event ko hata deta hai
+        });
+    </script>
+</body>
+</html>
